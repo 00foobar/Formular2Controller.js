@@ -1,6 +1,6 @@
 <?php
-print_r($_POST);
-exit();
+//print_r($_POST);
+//exit();
 
 if ( isset($_POST['action']) && !empty($_POST['action']) && $_POST['action'] == 'do_something' )
 {
