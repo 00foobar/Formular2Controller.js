@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="utf-8"/>
+		<title>Formular2Controller</title>
+	</head>
+	<body>		
+		<div>
+			<!-- example form -->
+			<form id="test-form" role="form">
+				<div class="form-group">
+					<label for="test-form-input">test-form-field1:</label>
+					<input type="text" id="test-form-field1" name="test-form-field1" required>
+				</div>
+
+				<div class="form-group">
+					<label for="test-form-input">test-form-field2:</label>
+					<input type="text" id="test-form-field2" name="test-form-field2" required>
+				</div>
+
+				<button type="submit">Submit</button>
+			</form>
+		</div>
+
+		<!-- jQuery -->
+		<script type="text/javascript" src="thirdparty/jquery-1.11.3/jquery.min.js"></script>
+
+		<!-- Formular2Controller -->
+		<script type="text/javascript" src="f2c.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function()
+			{
+				$('#test-form').submit(function(event)
+				{
+					event.preventDefault();
+
+					var f2c = new Formular2Controller($('#test-form *'), 'do_something', 'controller.php');
+
+					var result = f2c.requestPublic();
+				});
+			});
+		</script>
+	</body>
+</html>
